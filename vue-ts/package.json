@@ -3,7 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "dev01": "vue-cli-service serve --open --env dev01",
+    "qa01": "vue-cli-service serve --open --env qa01",
+    "qa02": "vue-cli-service serve --open --env qa02",
+    "uat01": "vue-cli-service serve --open --env uat01",
+    "local": "vue-cli-service serve --open --env local",
+    "start": "npm run dev01",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
@@ -36,9 +41,14 @@
     "chai": "^4.1.2",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "file-loader": "^3.0.1",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
-    "typescript": "^3.4.3",
+    "ts-loader": "^6.0.0",
+    "tslint": "^5.16.0",
+    "tslint-config-standard": "^8.0.1",
+    "tslint-loader": "^3.5.4",
+    "typescript": "^3.4.5",
     "vue-template-compiler": "^2.5.21"
   }
 }

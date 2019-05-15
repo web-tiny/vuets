@@ -1,0 +1,94 @@
+@charset "utf-8";
+html{
+  -webkit-text-size-adjust:100%;
+  -ms-text-size-adjust:100%;
+  -webkit-overflow-scrolling:touch;
+  -webkit-tap-highlight-color:transparent;
+}
+body{
+  font-family:'Microsoft YaHei',微软雅黑,'宋体',Tahoma,Arial,sans-serif;
+}
+html,body {
+  width: 100%;
+  height: 100%;
+}
+body,
+div,
+ul,li,ol,
+h1,h2,h3,h4,h5,h6,
+input,textarea,
+select,
+p,
+dl,dt,dd,
+a,img,button,form,table,th,tr,td,tbody,
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+  margin:0;
+  padding:0;
+  -webkit-tap-highlight-color:transparent;
+}
+article,aside,details,figcaption,figure,footer,header,menu,nav,main,summary,section{
+  display:block;
+}
+div {
+  box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6{
+  font-size:100%;
+  font-family:'Microsoft YaHei',微软雅黑,'宋体',Tahoma,Arial,sans-serif;
+}
+fieldset,img,input,button,textarea{
+  border:0;
+  outline-style:none;
+}
+input{
+  padding-top:0;
+  padding-bottom:0;
+  font-family:'Microsoft YaHei',微软雅黑,'宋体',Tahoma,Arial,sans-serif;
+  -webkit-tap-highlight-color:transparent;
+  outline:0;
+  vertical-align:middle;
+}
+button,input{
+  line-height:normal;
+}
+textarea{
+  -webkit-tap-highlight-color:transparent;
+  resize:none;
+}
+ul,li,ol{
+  list-style:none;
+}
+strong{
+  font-weight:normal;
+}
+em,i{
+  font-style:normal;
+}
+input[type="submit"],input[type="reset"],input[type="button"],input{
+  resize:none;
+  border:0;
+}
+a{
+  text-decoration:none;
+  font-family:'Microsoft YaHei',微软雅黑,'宋体',Tahoma,Arial,sans-serif;
+  -webkit-tap-highlight-color:transparent
+}
+a:hover{
+  text-decoration:none
+}
+img{
+  vertical-align:middle;
+  display:block;
+  -ms-interpolation-mode:bicubic
+}
+.one-txt-cut{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.txt-cut{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}

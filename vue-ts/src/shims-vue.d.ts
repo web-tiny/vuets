@@ -5,7 +5,8 @@ declare module '*.vue' {
   interface Vue {
     $router: VueRouter,
     $route: Route,
-    $Message: any
+    $Message: any,
+    $refs: any
   }
   export default Vue
 }

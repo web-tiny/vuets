@@ -4,10 +4,9 @@ const projectName = '/open-api/'
 let url = process.env.NODE_ENV
 if (process.env.NODE_ENV === 'development') {
   const devEnv = require('./config/env')()
-  // console.log('devEnv', devEnv)
   url = devEnv.indexOf('local') > -1 ? `http://${devEnv.split('local')[1]}${projectName}` : `http://${devEnv}.letzgo.com.cn${projectName}`
 }
-console.log('当前启动 环境:', url)
+console.log('当前启动环境:', url)
 
 module.exports = {
   // 基本路径
@@ -60,20 +59,17 @@ module.exports = {
   pwa: {},
   // webpack-dev-server 相关配置
   devServer: {
-    port: 8080, // 8080,
-    https: false,
-    hotOnly: false,
     proxy: {
       // 设置代理
       // proxy all requests starting with /api to jsonplaceholder
-      '/api': {
+      '/open-api': {
         // target: 'https://emm.cmccbigdata.com:8443/',
         target: url,
         // target: 'http://47.106.136.114/',
         changeOrigin: true,
         ws: true,
         pathRewrite: {
-          '^/api': ''
+          '^/open-api': ''
         }
       }
     },
