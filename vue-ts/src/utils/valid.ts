@@ -2,7 +2,7 @@
  * @Author: Tiny
  * @Date: 2019-05-15 17:28:47
  * @Last Modified by: tiny.jiao@aliyun.com
- * @Last Modified time: 2019-05-15 17:44:14
+ * @Last Modified time: 2019-05-16 10:06:19
  */
 // 主要是公用的校验函数
 // 手机号的校验
@@ -10,7 +10,7 @@
 const isPhone = (phone: any): boolean => /^1[3-9]\d{9}$/.test(phone)
 
 // 是否为数组
-const isArray = (val: any): boolean => typeof Array.isArray === 'function' ? Array.isArray(val) : Object.prototype.toString.call(val) === '[object Array]'
+const isArray = (val: any): boolean => Object.prototype.toString.call(val) === '[object Array]'
 
 // 是否为对象
 const isObject = (val: any): boolean => Object.prototype.toString.call(val) === '[object Object]'
@@ -78,7 +78,7 @@ const checkDate = (val: any): boolean => {
     const month = val.substring(4, 6)
     const date = val.substring(6, 8)
     const date2 = new Date(year + '-' + month + '-' + date)
-    if (date2 && date2.getMonth() === (parseInt(month) - 1)) {
+    if (date2 && date2.getMonth() === (month - 1)) {
       return true
     }
   }
@@ -88,7 +88,7 @@ const checkDate = (val: any): boolean => {
 // 身份证省级地址码校验
 const checkProv = (val: any): boolean => {
   let pattern = /^[1-9][0-9]/
-  let provs = {
+  let provs: any = {
     11: '北京',
     12: '天津',
     13: '河北',

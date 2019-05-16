@@ -31,7 +31,7 @@ export default class VerificatCode extends Vue {
     }
   }
 
-  apiGetCodeData (phone) {
+  apiGetCodeData (phone: number) {
     apiGetCode(phone).then(res => {
       this.countDown()
       console.log(res)

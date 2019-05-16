@@ -41,16 +41,15 @@ export default class Login extends Vue {
     ],
     verificatCode: [
       { required: true, message: '请输入验证码', trigger: 'change' }
-    ],
+    ]
   }
-
-  submitForm (form) {
-    this.$refs[form].validate((valid) => {
+  submitForm (form: string) {
+    (this.$refs[form] as any).validate((valid: boolean) => {
       if (valid) {
         // alert('submit!')
       } else {
         console.log('error submit!!')
-        return false;
+        return false
       }
     })
   }
