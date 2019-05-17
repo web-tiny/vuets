@@ -19,6 +19,8 @@
 import { Component, Prop, Model, Watch, Emit, Inject, Provide, Vue } from 'vue-property-decorator'
 import BaseInput from '@/components/common/BaseInput.vue'
 import VerificatCode from '@/components/common/VerificatCode.vue'
+import { apiLogin } from '../api/login'
+import { Action } from 'vuex-class'
 
 @Component({
   components: {
@@ -26,10 +28,7 @@ import VerificatCode from '@/components/common/VerificatCode.vue'
     VerificatCode
   }
 })
-// interface IForm {
-//   phone: number;
-//   verificatCode: number;
-// }
+
 export default class Login extends Vue {
   form = {
     phone: '',
@@ -43,14 +42,25 @@ export default class Login extends Vue {
       { required: true, message: '请输入验证码', trigger: 'change' }
     ]
   }
+  @Action('succeseLogin') succeseLogin
+
   submitForm (form: string) {
     (this.$refs[form] as any).validate((valid: boolean) => {
       if (valid) {
-        // alert('submit!')
+        this.apiLoginData()
       } else {
         console.log('error submit!!')
         return false
       }
+    })
+  }
+  apiLoginData () {
+    apiLogin(this.form).then(res => {
+      console.log('login:', res)
+      this.succeseLogin({ phone: this.form.phone })
+      this.$router.push('/home')
+    }).catch(err => {
+      console.error(err)
     })
   }
 }

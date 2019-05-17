@@ -5,7 +5,7 @@
  * @Last Modified time: 2019-05-14 18:47:16
  */
 import home from './modules/home'
-import about from './modules/about'
+import about from './modules/login'
 
 export default {
   home,

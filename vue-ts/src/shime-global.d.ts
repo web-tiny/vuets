@@ -6,4 +6,4 @@
  */
 declare var window: Window
 declare var document: Document
-declare module 'element-ui'
+// declare module 'element-ui'

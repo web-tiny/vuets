@@ -14,6 +14,16 @@ const apiGetCode = (phone: number) => axios({
   }
 })
 
+const apiLogin = (data: any) => axios({
+  url: '/login/byphone',
+  method: 'post',
+  data: {
+    phone: data.phone,
+    code: data.verificatCode
+  }
+})
+
 export {
-  apiGetCode
+  apiGetCode,
+  apiLogin
 }
