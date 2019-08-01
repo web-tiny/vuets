@@ -1,6 +1,9 @@
 <template>
   <div :style="{ backgroundImage: `url(${require('@/assets/loginbg.jpg')})` }" class="login">
     <el-form :model="form" :rules="rules" ref="form" class="form">
+      <el-form-item>
+        <h2 class="title">短信验证码登陆</h2>
+      </el-form-item>
       <el-form-item prop="phone">
         <el-input v-model="form.phone" class="phone" placeholder="请输入手机号"></el-input>
       </el-form-item>
@@ -83,14 +86,24 @@ export default class Login extends Vue {
     background:rgba(255,255,255,1);
     border-radius: 12px;
     padding: 35px;
+    margin-right: 100px;
     .submitBtn {
       width: 100%;
+      height: 50px;
+      border-radius: 6px;
+      font-size: 18px;
+      margin-top: 60px;
     }
     .verificatCodeInput {
       width: 60%;
     }
     .verificatCodeBtn {
       float: right;
+    }
+    .title {
+      font-size:20px;
+      font-weight:500;
+      color:rgba(74,74,74,1);
     }
   }
 }

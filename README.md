@@ -1,2 +1,0 @@
-# vuets
-vue typescript

@@ -18,7 +18,7 @@ const handleErr = function (err: any) {
   if (err) {
     switch (err.status) {
       case 401:
-        router.push('/login')
+        router.push('/')
         break
     }
     Message({

@@ -9,14 +9,17 @@ const login = {
     phone: '',
     code: ''
   },
+
   getters: {
     getterPhone: (state: any) => state.phone
   },
+
   mutations: {
     SET_DATALOGIN: (state: any, data: any) => {
       state.phone = data
     }
   },
+
   actions: {
     succeseLogin (context: any, payLod: any) {
       context.commit('SET_DATALOGIN', payLod)
